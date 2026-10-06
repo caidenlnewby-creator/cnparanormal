@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CN Paranormal</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=IM+Fell+English:ital@0;1&family=Special+Elite&display=swap" rel="stylesheet" />
+<style>
+:root { --bone:#f6efe4; --rust:#c85a3e; --display:"Cinzel",Palatino,serif; --serif:"IM Fell English",Palatino,serif; --stamp:"Special Elite",monospace; }
+body { margin:0; color:var(--bone); font-family:var(--serif); background:#120e0c; }
+a { color:#e7efc8; }
+.inv, .watch { position:fixed; z-index:40; top:14px; background:rgba(18,12,10,.9); color:var(--bone); border:1px solid var(--rust); font-family:var(--stamp); padding:8px 10px; text-decoration:none; }
+.inv { left:14px; } .watch { right:36px; top:28px; }
+.top { text-align:center; padding:18px; } .banner { width:128px; height:128px; border-radius:50%; }
+main { width:min(880px, calc(100% - 28px)); margin:0 auto; }
+section { padding:32px 0; border-top:1px solid rgba(246,239,228,.2); }
+h1, h2 { font-family:var(--display); font-weight:500; } h1 { font-size:42px; } h1 em { color:#7d1c1c; }
+.dock { display:flex; gap:16px; flex-wrap:wrap; justify-content:center; font-family:var(--stamp); font-size:18px; } .dock a { color:var(--bone); text-decoration:none; }
+.chip { border:1px solid rgba(246,239,228,.3); background:rgba(0,0,0,.35); color:var(--bone); padding:8px 12px; font-family:var(--display); }
+.chip.on { background:var(--rust); }
+.grid { display:grid; gap:10px; } @media (min-width:900px) { .grid { grid-template-columns:1fr 1fr; } .rail { display:block; position:fixed; top:78px; left:16px; width:168px; } }
+.rail { display:none; } .rail a { display:block; color:#f0e2d0; text-decoration:none; font-family:var(--stamp); padding:12px 0; border-bottom:1px solid rgba(246,239,228,.22); }
+.card { background:rgba(16,12,10,.78); color:inherit; text-decoration:none; } .card img { width:100%; aspect-ratio:16/10; object-fit:cover; }
+.soonbox { max-height:280px; overflow:auto; } .soon { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(246,239,228,.16); }
+.drawer { position:fixed; z-index:42; top:0; left:0; height:100%; width:min(320px, 88vw); background:#1b140f; transform:translateX(-105%); padding:14px; transition:transform .45s ease; } .drawer.open { transform:translateX(0); }
+.shade { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:41; } .shade.show { display:block; }
+.loc { display:block; width:100%; text-align:left; background:none; border:0; border-bottom:1px solid rgba(246,239,228,.2); color:var(--bone); font-family:var(--stamp); padding:10px 0; }
+.pop { display:none; } .loc:hover + .pop, .pop.show { display:block; }
+form { display:grid; gap:10px; background:rgba(18,12,10,.92); padding:16px; } input, textarea, select { background:#2a211b; color:var(--bone); border:1px solid rgba(246,239,228,.35); padding:10px; }
+.send, .pay a { background:var(--rust); color:#fff; text-decoration:none; border:0; padding:10px 12px; font-family:var(--stamp); }
+</style>
+</head>
+<body>
+<aside class="rail" id="rail"></aside>
+<button class="inv" id="open" type="button">View investigations</button>
+<a class="watch" href="https://www.youtube.com/c/IdahoParanormal" target="_blank" rel="noopener noreferrer">Watch</a>
+<div class="shade" id="shade"></div>
+<aside class="drawer" id="drawer"><button id="close" type="button">×</button><h2>Investigations</h2><div id="locs"></div></aside>
+<header class="top"><a href="https://www.youtube.com/c/IdahoParanormal" target="_blank" rel="noopener noreferrer">CN Paranormal - Subscribe</a></header>
+<main>
+<section><p>Founded 2022. Revamp in progress.</p><h1>We go in after the living have <em>left.</em></h1><p>The building is empty of real people. It may not be empty. Ordinary causes get ruled out first. Nothing is staged. If it is on the film, it happened.</p></section>
+<nav class="dock"><a href="https://www.youtube.com/c/IdahoParanormal">YouTube</a><a href="#films">Films</a><a href="#soon">Schedule</a><a href="#gallery">Gallery</a><a href="#notes">Comments</a><a href="#tips">Support</a><a href="#contact">Contact</a><a href="#file">Investigators</a></nav>
+<section id="films"><h2>Films</h2><div id="chips"><button class="chip on" data-shelf="all">ALL</button><button class="chip" data-shelf="paranormal">PARANORMAL</button><button class="chip" data-shelf="abandoned">ABANDONED</button></div><div class="grid" id="grid"></div></section>
+<section id="soon"><h2>Schedule</h2><div class="soonbox" id="soonList"></div></section>
+<section id="gallery"><h2>Gallery</h2><div id="track"></div></section>
+<section id="notes"><h2>Comments</h2><p>@codythedog61 Keep on being real and the channel will do great.</p><p>@sarahfairchild399 Born and raised in Idaho. Thank you for this.</p></section>
+<section id="tips"><h2>Tips buy gear and doors</h2><div class="pay"><a href="https://cash.app/$r3alcn">Send money · Cash App $r3alcn</a><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=caidenlnewby@gmail.com&item_name=Tip&currency_code=USD">Send money · PayPal</a></div></section>
+<section id="contact"><h2>Questions? Comments? Concerns?</h2><form id="form"><input id="name" placeholder="Name" required /><input id="mail" type="email" placeholder="Your email" required /><select id="kind"><option>Question</option><option>Comment</option><option>Concern</option><option>Collab</option></select><textarea id="note" required></textarea><p id="err"></p><button class="send" type="submit">Send</button></form></section>
+<section id="file"><h2>Caiden</h2><p>Married. Most nights are alone. Places are found by hand. Shot on an iPhone. Cut on a MacBook.</p><h2>Kailee</h2><p>Caiden's wife. On the nights she comes, she is in the building with him.</p></section>
+</main>
+<script src="desk.js"></script>
+</body>
+</html>
