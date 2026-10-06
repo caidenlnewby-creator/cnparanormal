@@ -24,12 +24,12 @@
     ["A ghost town they never came back to", "Jun 20, 2027"]
   ];
   const places = [
-    ["Idaho City Hotel", "An early hotel night in the basin. The town had people in it. The room on the tape did not feel unused.", "https://www.youtube.com/watch?v=-rEnrQKMnF4"],
-    ["Silver City", "A mining town on that same night. The walk is the record.", "https://www.youtube.com/watch?v=-rEnrQKMnF4"],
-    ["Canyon Hill Cemetery", "Two trees and a local story about a midnight jogger who knocks.", "https://www.youtube.com/watch?v=KzR84FXKuo8"],
-    ["Central Unit", "The white prison block in the field. The night at this site is still being cut.", ""],
-    ["Shenandoah Ranch", "A figure on the ranch tape. Scheduled to open Oct 5, 2026.", ""],
-    ["Florida prison", "Cells left as they were. Scheduled to open Oct 5, 2026.", ""]
+    ["Idaho City Hotel", "An early hotel night in the basin. The town had people in it. The room on the tape did not feel unused. This is the film people still send around.", "https://www.youtube.com/watch?v=-rEnrQKMnF4"],
+    ["Silver City", "A mining town on that same night. Remote enough that a Saturday can look abandoned. Not called a haunt here. The walk is the record.", "https://www.youtube.com/watch?v=-rEnrQKMnF4"],
+    ["Canyon Hill Cemetery", "Two trees and a local story about a midnight jogger who knocks. The film is the walk, not a verdict on the story.", "https://www.youtube.com/watch?v=KzR84FXKuo8"],
+    ["Central Unit", "The white prison block in the field still. Grass, a fence, and the front of the building. The night at this site is still being cut.", ""],
+    ["Shenandoah Ranch", "A figure on the ranch tape, seen rather than suggested. Scheduled to open Oct 5, 2026.", ""],
+    ["Florida prison", "Cells left as they were. A yard that still feels staffed after the staff left. Scheduled to open Oct 5, 2026.", ""]
   ];
   function el(tag, cls, text) { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
   function card(f) {
